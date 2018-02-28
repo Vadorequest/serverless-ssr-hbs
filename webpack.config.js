@@ -31,6 +31,7 @@ module.exports = {
         loader: "handlebars-loader",
         options: {
           helperDirs: path.join(__dirname, 'src/helpers'),
+          partialDirs: path.join(__dirname, 'src/partials'),
           precompileOptions: {
             knownHelpersOnly: false, // Allow additional helpers at runtime
           },

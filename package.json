@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Simple SSR with Serverless and Handlebars",
   "scripts": {
+    "start": "sls offline",
+    "package": "sls package",
+    "deploy": "sls deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

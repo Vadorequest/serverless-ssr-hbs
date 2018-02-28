@@ -50,7 +50,7 @@ export async function handler(event, context, callback) {
       headers: {
         'Content-Type': 'text/html',
       },
-      body: template(data) //
+      body: template(data) // Apply template with injected data
     });
 
   } catch (e) {

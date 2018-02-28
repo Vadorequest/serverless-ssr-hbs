@@ -13,7 +13,6 @@ custom:
   webpackIncludeModules: true
   memorySizes: # TODO Check how much is actually needed
     development: 256
-    staging: 256
     production: 256
 
 provider:
