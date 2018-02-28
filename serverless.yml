@@ -1,0 +1,44 @@
+service:
+  name: serverless-ssr-hbs
+
+frameworkVersion: ">=1.26.1"
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+# Enable auto-packing of external modules
+# See https://serverless-stack.com/chapters/add-support-for-es6-es7-javascript.html
+custom:
+  webpackIncludeModules: true
+  memorySizes: # TODO Check how much is actually needed
+    development: 256
+    staging: 256
+    production: 256
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: ${opt:stage, 'development'}
+#  region: ${opt:region, 'eu-west-3'}
+  memorySize: ${self:custom.memorySizes.${self:provider.stage}}
+#  deploymentBucket:
+#    name: serverless-ssr-hbs
+#    serverSideEncryption: AES256
+  environment:
+    NODE_ENV: ${self:provider.stage}
+
+functions:
+  status:
+    handler: src/functions/status/status.handler
+    events:
+      - http:
+          method: get
+          path: status
+
+  index:
+    handler: src/functions/index/index.handler
+    events:
+      - http:
+          method: get
+          path: /
