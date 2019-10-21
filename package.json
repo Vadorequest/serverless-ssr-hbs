@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "babel-runtime": "6.26.0",
-    "handlebars": "4.0.11",
+    "handlebars": "4.4.5",
     "handlebars-loader": "1.6.0",
     "lodash.get": "4.4.2",
     "moment": "2.20.1",
